@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>TitleNoty</title>
+</head>
+<body>
+	<button id="add">Add</button>
+	<button id="minus">Minus</button>
+	<script src="js/titleNoty.js"></script>
+	<script>
+		titleNoty.init({
+			//message: 'You have unread message'
+			effect: 'addition'
+		})
+		document.getElementById('add').onclick = function() {
+			titleNoty.add();
+		}
+		document.getElementById('minus').onclick = function() {
+			titleNoty.minus();
+		}
+	</script>
+</body>
+</html>
