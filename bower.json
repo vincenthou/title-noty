@@ -23,6 +23,10 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "js",
+    "index.html"
+    "gulpfile.js"
+    ".gitignore"
   ]
 }

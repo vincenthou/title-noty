@@ -1,1 +1,0 @@
-define(["titleNoty"],function(n){n.init({effect:"addition"}),document.getElementById("add").onclick=function(){n.add()},document.getElementById("minus").onclick=function(){n.minus()}});
