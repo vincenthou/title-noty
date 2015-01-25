@@ -1,0 +1,28 @@
+{
+  "name": "titleNoty",
+  "version": "0.0.0",
+  "homepage": "https://github.com/vincenthou/titleNoty",
+  "authors": [
+    "vincenthou <vincenthou365@gmail.com>"
+  ],
+  "description": "Show notification on browser tab title",
+  "main": [
+    "dist/titleNoty.js"
+  ],
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "front-end",
+    "title",
+    "notification"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

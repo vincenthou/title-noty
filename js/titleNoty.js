@@ -24,7 +24,7 @@
             return this;
         },
         render: function() {
-            self = titleNoty;
+            self = this;
             document.title = self.currentTitle;
             switch (self.effect) {
                 case 'flash': {
@@ -54,12 +54,19 @@
                 (this.counter < 0) && (this.counter = 0);
                 this.replaceCount();
             }
-        }
+        },
         replaceCount: function() {
             counterStr = this.counterWrapper.replace('count', this.counter)
             !this.counter && (counterStr = '')
             document.title = counterStr + this.title;
         }
+    };
+    //Support AMD module definition
+    if (typeof define === "function" && define.amd) {
+        define( "titleNoty", [], function() {
+            return titleNoty;
+        });
+    } else {
+        win.titleNoty = titleNoty;
     }
-    win.titleNoty = titleNoty;
-}(window, undefined))
+}(window, undefined));

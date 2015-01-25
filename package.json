@@ -1,0 +1,30 @@
+{
+  "name": "titleNoty",
+  "version": "1.0.0",
+  "description": "Show nofification on brower tab title",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-load-plugins": "^0.8.0",
+    "gulp-uglify": "^1.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vincenthou/titleNoty.git"
+  },
+  "keywords": [
+    "front-end",
+    "title",
+    "notification"
+  ],
+  "author": "vincenthou",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vincenthou/titleNoty/issues"
+  },
+  "homepage": "https://github.com/vincenthou/titleNoty"
+}

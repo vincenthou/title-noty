@@ -1,6 +1,12 @@
 # titleNoty
 Simple plugin to notify information by refreshing title name, cancel message notifing when current page is visiable.
 
+#Installation
+Bower support
+```javascript
+bower install titleNoty
+```
+
 #Usage
 There are three types supported now: flash, scroll, addition.
 
@@ -56,5 +62,3 @@ titleNoty.set(10);
 # TODO
 * Support notification
 * Test Browser compability
-* Bower support
-* Build tasks
