@@ -1,17 +1,16 @@
 (function(win, undef){
-    var checkInterval = 100;
     titleNoty = {
         init: function (config) {
-            this.checkInterval = config.checkInterval || 200;
-            this.effect = config.effect || 'flash'
+            !config && (config = {});
+            this.interval = config.interval || 200;
             this.title = config.title || document.title;
             this.message = config.message || this.title;
             this.currentTitle = this.message;
-            if (this.effect !== 'addition') {
-                this.timer = setInterval(this.render, this.checkInterval);
+            if (this.interval) {
+                this.timer = setInterval(this._render, this.interval);
             } else {
-                this.counter = 0;
-                this.counterWrapper = config.counterWrapper || '(count)';
+                this.number = 0;
+                this.numberWrapper = config.numberWrapper || '(number)';
             }
             var self = this;
             document.addEventListener("visibilitychange", function(evt) {
@@ -23,7 +22,7 @@
             }, false);
             return this;
         },
-        render: function() {
+        _render: function() {
             self = this;
             document.title = self.currentTitle;
             switch (self.effect) {
@@ -39,26 +38,29 @@
             }
         },
         add: function() {
-            this.counter++;
-            this.replaceCount();
+            !this.interval && this.init();
+            this.number++;
+            this._replaceNum();
         },
-        minus: function() {
-            this.counter--;
-            (this.counter < 0) && (this.counter = 0);
-            this.replaceCount();
+        sub: function() {
+            !this.interval && this.init();
+            this.number--;
+            (this.number < 0) && (this.number = 0);
+            this._replaceNum();
         },
         set: function(number) {
+            !this.interval && this.init();
             number = parseInt(number);
             if (!isNaN(number)) {
-                this.counter = number;
-                (this.counter < 0) && (this.counter = 0);
-                this.replaceCount();
+                this.number = number;
+                (this.number < 0) && (this.number = 0);
+                this._replaceNum();
             }
         },
-        replaceCount: function() {
-            counterStr = this.counterWrapper.replace('count', this.counter)
-            !this.counter && (counterStr = '')
-            document.title = counterStr + this.title;
+        _replaceNum: function() {
+            numberStr = this.numberWrapper.replace('count', this.number)
+            !this.number && (numberStr = '')
+            document.title = numberStr + this.title;
         }
     };
     //Support AMD module definition
