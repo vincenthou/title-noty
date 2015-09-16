@@ -24,7 +24,7 @@
     "bower_components",
     "test",
     "tests",
-    "js",
+    "js/amdMain.js",
     "index.html",
     "gulpfile.js",
     ".gitignore"

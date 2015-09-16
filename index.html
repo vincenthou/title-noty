@@ -5,20 +5,43 @@
     <title>TitleNoty</title>
 </head>
 <body>
+    <label>Number title:</label>
+    <input id="counter" type="number" value="0" min="0"/>
     <button id="add">Add</button>
-    <button id="minus">Minus</button>
-    <script src="js/titleNoty.js"></script>
+    <button id="sub">Subtract</button>
+    <script src="dist/titleNoty.js"></script>
     <script>
+        /*
         titleNoty.init({
-            //message: 'You have unread message'
-            effect: 'addition'
-        })
-        document.getElementById('add').onclick = function() {
-            titleNoty.add();
+            numberWrapper: '[number]',
+            message: 'You have unread message',
+            interval: 100,
+            title: 'Title',
+            number: 5,
+            max: 30
+        });
+        */
+        function $(id) {
+            return document.getElementById(id);
         }
-        document.getElementById('minus').onclick = function() {
-            titleNoty.minus();
-        }
+        document.addEventListener('DOMContentLoaded', function(){
+            $counter = $('counter');
+            $('add').onclick = function() {
+                titleNoty.add();
+                $counter.value = titleNoty.number;
+            }
+            $('sub').onclick = function() {
+                titleNoty.sub();
+                $counter.value = titleNoty.number;
+            }
+            $counter.onchange = function(e) {            
+                titleNoty.set(e.target.value);
+            }
+        });
+        //titleNoty.flash();
+        //titleNoty.flash('test');
+        //titleNoty.scroll();
+        //titleNoty.scroll('test');
     </script>
     <!--
     <script data-main="js/amdMain" src="http://cdn.bootcss.com/require.js/2.1.15/require.js"></script>
